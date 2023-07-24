@@ -15,6 +15,8 @@ var timerFull = document.querySelector(".timer-full")
 var timerText = document.querySelector(".timer")
 var timerTime = 30
 
+document.body.style.display = "none"
+
 //by clicking the Check Leaderboard button, causes the pages main content to be replaced
 checkResults.addEventListener("click", function(event) {
     leaderBoard.style.display = "block"
@@ -34,8 +36,9 @@ returnButton.addEventListener("click", function(event) {
 //clicking the start button causes the timer to start
 startButton.addEventListener("click", function(event) {
     var timerGo = setInterval(function() {
-    timerTime--;
+        timerTime--;
         timerText.textContent = timerTime;
+        startButton.style.display = "none"
       
         if(timerTime === 0) {
             clearInterval(timerGo);
@@ -45,6 +48,7 @@ startButton.addEventListener("click", function(event) {
             checkResults.style.display = "none"
             timerFull.style.display = "none"
             timerTime = 30
+            startButton.style.display = ""
         }
     }, 100);
 })
