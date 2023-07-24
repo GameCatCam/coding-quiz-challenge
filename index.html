@@ -9,6 +9,10 @@
   <body>
     <header>
       <button class="high-scores">Check Leaderboards</button>
+      <div class="timer-full">
+        <p>Time Left: </p>
+        <p class="timer">0</p>
+      </div>
     </header>
 
     <main>
@@ -17,16 +21,27 @@
           <h1>Quiz Challenge #42</h1>
           <p>We understand the last couple have been pretty rough, but we promise no casualties will become of anyone who partakes in this exam... Hopefully.</p>
         </div>
+        <div>
+          <button class="start-button">Start!</button>
+        </div>
         <ol class="quiz-answers">
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
         </ol>
       </section>
 
-      <section>
+      <section class="score-board">
+        <h1>Leaderboard</h1>
+        <ol>
+          <li>Peemis</li>
+        </ol>
+        <button class="return">Go Back!</button>
+      </section>
 
+      <section class="input-field">
+        <h1>Congrast!</h1>
+        <p>Please put in your personal information!</p>
+        <label for="name">Input Name:</label>
+        <input type="text" id="name" name="name">
+        <input class="submit" type="submit" value="Submit (By Pressing This Button You Agree To The Fine Print)">
       </section>
     </main>
     <script src="assets/js/script.js"></script>

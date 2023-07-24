@@ -10,8 +10,47 @@
     font-size: large;
 }
 
-.quiz-answers {
+.score-board {
+    text-align: center;
+    width: 50%;
+    height: 50%;
+    margin: auto;
+    display: none;
+}
 
+.input-field {
+    text-align: center;
+    width: 50%;
+    height: 50%;
+    margin: auto;
+    display: none;
+}
+
+.score-board li {
+    text-align: initial;
+}
+
+.high-scores {
+    height: 30px;
+    border-radius: 10px;
+    color: white;
+    background-color: #a10873;
+    border: none;
+}
+
+.timer {
+    margin-left: 5px;
+}
+
+header {
+    width: 100%;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header div {
+    display: inline-flex;
 }
 
 li {
