@@ -15,8 +15,6 @@ var timerFull = document.querySelector(".timer-full")
 var timerText = document.querySelector(".timer")
 var timerTime = 30
 
-document.body.style.display = "none"
-
 //by clicking the Check Leaderboard button, causes the pages main content to be replaced
 checkResults.addEventListener("click", function(event) {
     leaderBoard.style.display = "block"
