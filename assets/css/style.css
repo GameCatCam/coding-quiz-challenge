@@ -51,6 +51,10 @@
     color: white;
 }
 
+.quiz-answers {
+    display: none;
+}
+
 body {
     background-color: #f09cd7;
 }
