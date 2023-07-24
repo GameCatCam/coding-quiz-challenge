@@ -1,0 +1,19 @@
+.quiz-content {
+    text-align: center;
+    width: 50%;
+    height: 50%;
+    margin: auto;
+}
+
+.quiz-main {
+    margin-top: 5%;
+    font-size: large;
+}
+
+.quiz-answers {
+
+}
+
+li {
+    margin: 5px 0px auto;
+}
