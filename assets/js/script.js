@@ -12,6 +12,10 @@ var timerText = document.querySelector(".timer")
 var listText = document.querySelector(".quiz-answers")
 var quizText = document.querySelector(".quiz-main")
 var scoreInput = document.querySelector(".score-input")
+var userScore = document.getElementById("user-score")
+var userName = document.getElementById("name")
+var leaderboardText = localStorage.getItem("stats")
+var scoreText = document.querySelector(".score-text")
 
 var areyouWinning = false
 var timerTime = 30
@@ -49,9 +53,6 @@ var shuffledAnswers = fakeAnswers.sort(() => Math.random() - 0.5)
 
 // This function resets the page to base after the game has run it's course
 function gameReset() {
-    console.log(shuffledqandA)
-    console.log(qandA)
-
     timerTime = 30
     winCount = 0
     listText.style.display = ""
@@ -87,11 +88,16 @@ returnButton.addEventListener("click", function(event) {
 
 //when submit is click on the input page, it sends you to the leaderboard
 submitButton.addEventListener("click", function(event) {
+    event.preventDefault()
+
     inputField.style.display = "none"
     leaderBoard.style.display = "block"
     quizContent.style.display = "none"
     checkResults.style.display = "none"
     timerFull.style.display = "none"
+
+    saveScores()
+    renderScores()
 })
 
 //clicking the start button causes the timer to start
@@ -103,13 +109,14 @@ startButton.addEventListener("click", function(event) {
         //Checks win condition
         if (timerTime >= 0) {
             if (winCount === 4 && timerTime > 0) {
-                score = timerTime * winCount
+                score = timerTime * winCount + 1
                 clearInterval(timerGo);
                 gameReset()
             }
         }
         //Time's up resolution
         if(timerTime <= 0) {
+            score = timerTime * winCount + 1
             clearInterval(timerGo);
             gameReset()
         }
@@ -121,8 +128,6 @@ startButton.addEventListener("click", function(event) {
 //This function replaces the old questions and answers with the next ones in the sequence
 function playGame() {
     if (winCount === 4) {
-        console.log(winCount)
-        console.log(timerTime)
         return;
     }
 
@@ -152,9 +157,6 @@ listText.addEventListener("click", function(event) {
     if (event.target.matches("button")) {
        if (quizText.children[0].textContent === "Who are you?") {
             if (event.target.textContent === "Me") {
-                console.log(shuffledqandA)
-                console.log(qandA)
-
                 winCount += 1
                 shuffledqandA.shift()
                 playGame()
@@ -163,9 +165,6 @@ listText.addEventListener("click", function(event) {
             }
         } else if (quizText.children[0].textContent === "Guess what?") {
             if (event.target.textContent === "Chicken Butt") {
-                console.log(shuffledqandA)
-                console.log(qandA)
-
                 winCount += 1
                 shuffledqandA.shift()
                 playGame()
@@ -174,9 +173,6 @@ listText.addEventListener("click", function(event) {
             }
         } else if (quizText.children[0].textContent === "Who's Joe?") {
             if (event.target.textContent === "Joe Mama") {
-                console.log(shuffledqandA)
-                console.log(qandA)
-
                 winCount += 1
                 shuffledqandA.shift()
                 playGame()
@@ -185,9 +181,6 @@ listText.addEventListener("click", function(event) {
             }
         } else if (quizText.children[0].textContent === "Pick the Answer") {
             if (event.target.textContent === "Answer") {
-                console.log(shuffledqandA)
-                console.log(qandA)
-
                 winCount += 1
                 shuffledqandA.shift()
                 playGame()
@@ -197,3 +190,20 @@ listText.addEventListener("click", function(event) {
         }
     }
 })
+
+function saveScores() {
+    var userScores = {
+        Name: userName.value,
+        Score: score
+    }
+
+    localStorage.setItem('highScore', JSON.stringify(userScores))
+}
+
+function renderScores() {
+    var recentScore = JSON.parse(localStorage.getItem('highScore'))
+
+    scoreText.textContent = recentScore.Name + " " + recentScore.Score
+}
+
+renderScores()
