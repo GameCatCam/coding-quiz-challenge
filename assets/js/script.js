@@ -1,7 +1,3 @@
-// Start button and question timer
-// Successive questions
-// Wrong answer penalty
-// Game over condition
 // Scoreboard functionality
 
 var checkResults = document.querySelector(".high-scores")
@@ -53,17 +49,22 @@ var shuffledAnswers = fakeAnswers.sort(() => Math.random() - 0.5)
 
 // This function resets the page to base after the game has run it's course
 function gameReset() {
+    console.log(shuffledqandA)
+    console.log(qandA)
+
+    timerTime = 30
+    winCount = 0
     listText.style.display = ""
     inputField.style.display = "block"
     leaderBoard.style.display = "none"
     quizContent.style.display = "none"
     checkResults.style.display = "none"
     timerFull.style.display = "none"
-    timerTime = 30
     startButton.style.display = ""
     document.body.children[1].children[0].children[0].children[0].textContent = "Quiz Challenge #42"
     document.body.children[1].children[0].children[0].children[1].textContent = "We understand the last couple have been pretty rough, but we promise no casualties will become of anyone who partakes in this exam... Hopefully."
     checkResults.disabled = false
+    shuffledqandA = qandA.sort(() => Math.random() - 0.5);
 
     scoreInput.textContent = "Your score was " + score + "!"
 }
@@ -117,6 +118,7 @@ startButton.addEventListener("click", function(event) {
     playGame()
 })
 
+//This function replaces the old questions and answers with the next ones in the sequence
 function playGame() {
     if (winCount === 4) {
         console.log(winCount)
@@ -145,10 +147,14 @@ function playGame() {
     }
 }
 
+//This event progresses the game when the correct options are clicked and provides a penalty for wrong answers
 listText.addEventListener("click", function(event) {
     if (event.target.matches("button")) {
        if (quizText.children[0].textContent === "Who are you?") {
             if (event.target.textContent === "Me") {
+                console.log(shuffledqandA)
+                console.log(qandA)
+
                 winCount += 1
                 shuffledqandA.shift()
                 playGame()
@@ -157,6 +163,9 @@ listText.addEventListener("click", function(event) {
             }
         } else if (quizText.children[0].textContent === "Guess what?") {
             if (event.target.textContent === "Chicken Butt") {
+                console.log(shuffledqandA)
+                console.log(qandA)
+
                 winCount += 1
                 shuffledqandA.shift()
                 playGame()
@@ -165,6 +174,9 @@ listText.addEventListener("click", function(event) {
             }
         } else if (quizText.children[0].textContent === "Who's Joe?") {
             if (event.target.textContent === "Joe Mama") {
+                console.log(shuffledqandA)
+                console.log(qandA)
+
                 winCount += 1
                 shuffledqandA.shift()
                 playGame()
@@ -173,6 +185,9 @@ listText.addEventListener("click", function(event) {
             }
         } else if (quizText.children[0].textContent === "Pick the Answer") {
             if (event.target.textContent === "Answer") {
+                console.log(shuffledqandA)
+                console.log(qandA)
+
                 winCount += 1
                 shuffledqandA.shift()
                 playGame()
