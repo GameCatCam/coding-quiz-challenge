@@ -55,8 +55,14 @@
     display: none;
 }
 
+.quiz-button {
+    width: 600px;
+}
+
 body {
     background-color: #f09cd7;
+    padding: 0;
+    margin: 0px auto;
 }
 
 button {
