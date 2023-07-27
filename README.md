@@ -7,7 +7,7 @@ This application has an in browser quiz game. Every answer correctly applied inc
 ![Screenshot of password application.](/assets/screenshot.png "Screenshot of webpage")
 
 ## Link to Site
-https://gamecatcam.github.io/random-password-generator-challenge/
+https://gamecatcam.github.io/coding-quiz-challenge/
 
 ## Credits
-The code presented in this project was edited by me (Cameron Rawlins). Original code was supplied by EdX for this week's challenge. Additional assistance for the code found in this was done by sites such as MDN Web Docs (https://developer.mozilla.org/en-US/) which helped look up some functions of JavaScript.
+The code developed in this project was done by me (Cameron Rawlins). Any assistance given on this project was through my instructor Ross Ritchey, through my classmates, or through sites such as MDNWebDocs (https://developer.mozilla.org/en-US/).
