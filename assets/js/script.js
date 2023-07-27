@@ -191,6 +191,7 @@ listText.addEventListener("click", function(event) {
     }
 })
 
+//This fucntion saves the most recent score in local storage
 function saveScores() {
     var userScores = {
         Name: userName.value,
@@ -200,10 +201,11 @@ function saveScores() {
     localStorage.setItem('highScore', JSON.stringify(userScores))
 }
 
+//This function applies the most recent score to the score board
 function renderScores() {
     var recentScore = JSON.parse(localStorage.getItem('highScore'))
 
     scoreText.textContent = recentScore.Name + " " + recentScore.Score
 }
-
+//This is here to render the most recent score upon page load
 renderScores()
