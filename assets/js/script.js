@@ -43,7 +43,7 @@ var fakeAnswers = [
     "placeholder text",
 ]
 
-var shuffledqandA = qandA.sort(() => Math.random() - 0.5);
+var shuffledqandA = qandA.toSorted(() => Math.random() - 0.5);
 var shuffledSlots = answerSlots.sort(() => Math.random() - 0.5);
 var shuffledAnswers = fakeAnswers.sort(() => Math.random() - 0.5)
 
@@ -64,7 +64,7 @@ function gameReset() {
     document.body.children[1].children[0].children[0].children[0].textContent = "Quiz Challenge #42"
     document.body.children[1].children[0].children[0].children[1].textContent = "We understand the last couple have been pretty rough, but we promise no casualties will become of anyone who partakes in this exam... Hopefully."
     checkResults.disabled = false
-    shuffledqandA = qandA.sort(() => Math.random() - 0.5);
+    shuffledqandA = qandA.toSorted(() => Math.random() - 0.5);
 
     scoreInput.textContent = "Your score was " + score + "!"
 }
