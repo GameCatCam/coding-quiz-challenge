@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Quiz Challenge Extravaganza</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
+  </head>
+  <body>
+    <header>
+      <button class="high-scores">Check Leaderboards</button>
+      <div class="timer-full">
+        <p>Time Left: </p>
+        <p class="timer">0</p>
+      </div>
+    </header>
+
+    <main>
+      <section class="quiz-content">
+        <div class="quiz-main">
+          <h1>Quiz Challenge #42</h1>
+          <p>We understand the last couple have been pretty rough, but we promise no casualties will become of anyone who partakes in this exam... Hopefully.</p>
+        </div>
+        <div>
+          <button class="start-button">Start!</button>
+        </div>
+        <ol class="quiz-answers">
+          <li><button class="answer-one quiz-button">Filler</button></li>
+          <li><button class="answer-two quiz-button">Filler</button></li>
+          <li><button class="answer-three quiz-button">Filler</button></li>
+          <li><button class="answer-four quiz-button">Filler</button></li>
+        </ol>
+      </section>
+
+      <section class="score-board">
+        <h1>Leaderboard</h1>
+        <ol>
+          <li>
+            <h2 class="score-text"></h2>
+          </li>
+        </ol>
+        <button class="return">Go Back!</button>
+      </section>
+
+      <section class="input-field">
+        <h1>Congrast!</h1>
+        <p>Please put in your personal information!</p>
+        <label id="user-score" for="name">Input Name:</label>
+        <input type="text" id="name" name="name">
+        <input class="submit" type="submit" value="Submit (By Pressing This Button You Agree To The Fine Print)">
+        <p class="score-input"></p>
+      </section>
+    </main>
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>
